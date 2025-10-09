@@ -1,6 +1,6 @@
-# Innoscripta CS Backend
+# Innoscripta case study [News Aggregator]
 
-A backend application powered by PHP (Laravel), PostgreSQL, and Docker. This guide helps you get started quickly using Docker.
+A backend application powered by PHP (Laravel), MySQL, and Docker. This guide helps you get started quickly using Docker.
 
 ## Prerequisites
 - [Docker](https://www.docker.com/get-started)
@@ -13,7 +13,7 @@ A backend application powered by PHP (Laravel), PostgreSQL, and Docker. This gui
    git clone https://github.com/khalidhamza/innoscripta-news-aggregator-cs.git
    ```
    ```sh
-   cd  innoscripta-cs
+   cd  innoscripta-news-aggregator-cs
    ```
 
 2. **Build and start the containers:**
