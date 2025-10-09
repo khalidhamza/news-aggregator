@@ -50,7 +50,6 @@ A backend application powered by PHP (Laravel), MySQL, and Docker. This guide he
 
 3. **Access the application:**
    - **App URL:** [http://localhost:8080](http://localhost:8080)
-   - **PGAdmin URL:** [http://localhost:5050](http://localhost:5050)
 
    > Use the credentials set in your `.env` and `docker-compose.yml` files to log in to PGAdmin and manage your database.
 
