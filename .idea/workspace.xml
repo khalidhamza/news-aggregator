@@ -7,11 +7,6 @@
     <list default="true" id="6b648068-0619-4e4a-ba6d-1b7dc4a986b4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Adapters/NewsArticleAdapter.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Adapters/NewsArticleAdapter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Enums/NewsSource.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Enums/NewsSource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Http/Controllers/TestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Http/Controllers/TestController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Repositories/ArticleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Repositories/ArticleRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Services/News/NewsService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Services/News/NewsService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/services.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +226,7 @@
       <workItem from="1760004729130" duration="1719000" />
       <workItem from="1760006458982" duration="1965000" />
       <workItem from="1760008460037" duration="28963000" />
-      <workItem from="1760107590604" duration="17847000" />
+      <workItem from="1760107590604" duration="18520000" />
     </task>
     <servers />
   </component>
