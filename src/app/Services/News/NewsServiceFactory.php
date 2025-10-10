@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\NewsService;
+namespace App\Services\News;
 
 use App\Enums\NewsSource;
 use Illuminate\Support\Collection;

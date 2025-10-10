@@ -3,7 +3,7 @@
 namespace App\Builders;
 
 use App\Enums\NewsSource;
-use App\Services\NewsService\NewsArticle;
+use App\Services\News\NewsArticle;
 use Illuminate\Support\Carbon;
 
 class NewsArticleBuilder

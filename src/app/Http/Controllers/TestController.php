@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Enums\NewsSource;
 use App\Jobs\SyncArticlesJob;
-use App\Services\NewsService\NewsServiceFactory;
+use App\Services\News\NewsServiceFactory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 
@@ -30,6 +30,13 @@ class TestController extends AppController
             // SyncArticlesJob::dispatch();
 
             // Artisan::call('articles:sync');
+
+            $service = NewsServiceFactory::make(NewsSource::GUARDIAN);
+            $articles = $service->syncArticles([
+                'from_date' => now(),
+                'per_page' => 1,
+            ]);
+            dd($articles);
 
         }catch (\Exception $e){
             dd($e->getMessage());

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\NewsService;
+namespace App\Services\News;
 
 use App\Builders\NewsArticleBuilder;
 use App\Enums\NewsSource;

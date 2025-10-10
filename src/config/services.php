@@ -40,4 +40,9 @@ return [
         'endpoint'  => env('NEWSAPI_ENDPOINT'),
     ],
 
+    'guardian'   => [
+        'api_key'   => env('GUARDIAN_API_KEY'),
+        'endpoint'  => env('GUARDIAN_ENDPOINT'),
+    ],
+
 ];

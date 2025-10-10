@@ -1,20 +1,21 @@
 <?php
 
 namespace App\Enums;
-use App\Services\NewsService\NewsApiService;
+use App\Services\News\Guardian\GuardianService;
+use App\Services\News\NewsApi\NewsApiService;
 use RuntimeException;
 
 enum NewsSource: int
 {
     case NEWSAPI    = 1;
-//    case GUARDIAN   = 2;
+    case GUARDIAN   = 2;
 //    case NYTIMES    = 3;
 
     public function getDisplayName(): string
     {
         return match($this) {
             self::NEWSAPI   => 'NewsAPI',
-//            self::GUARDIAN  => 'The Guardian',
+            self::GUARDIAN  => 'The Guardian',
 //            self::NYTIMES   => 'New York Times',
             default     => throw new RuntimeException('Service class not defined for this news source:'. $this->name),
         };
@@ -24,7 +25,7 @@ enum NewsSource: int
     {
         return match($this) {
             self::NEWSAPI   => NewsApiService::class,
-            // self::GUARDIAN  => 'The Guardian',
+            self::GUARDIAN  => GuardianService::class,
             // self::NYTIMES   => 'New York Times',
             default     => throw new RuntimeException('Service class not defined for this news source:'. $this->name),
         };

@@ -3,7 +3,7 @@
 namespace App\Jobs;
 
 use App\Enums\NewsSource;
-use App\Services\NewsService\NewsServiceFactory;
+use App\Services\News\NewsServiceFactory;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Support\Facades\Log;

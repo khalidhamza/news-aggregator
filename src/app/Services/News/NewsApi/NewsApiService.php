@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Services\NewsService;
+namespace App\Services\News\NewsApi;
 
 use App\Adapters\NewsArticleAdapter;
+use App\Services\News\NewsService;
 use Illuminate\Support\Collection;
 
 class NewsApiService extends NewsService
