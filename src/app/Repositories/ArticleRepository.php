@@ -10,6 +10,8 @@ class ArticleRepository
 {
     public function bulkUpsert(Collection $articles): int
     {
+        Log::info('Bulk upsert articles', ['articles' => $articles]);
+
         if ($articles->isEmpty()) {
             return 0;
         }

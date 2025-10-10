@@ -28,6 +28,11 @@ abstract class NewsService
     {
         try {
             $response = Http::get($this->baseUrl, $params);
+            Log::info('Calling the service', [
+                'url' => $this->baseUrl,
+                'params' => $params,
+                'response' => $response
+            ]);
             return $response->json();
         } catch (Exception $e) {
             Log::error("Failed to fetch articles: {$e->getMessage()}");
@@ -37,6 +42,8 @@ abstract class NewsService
 
     public function getArticles(array $filters = []): Collection
     {
+        Log::info('Getting articles', ['filters' => $filters]);
+
         $params = $this->buildRequestParams($filters);
 
         $response = $this->makeRequest($params);
@@ -46,6 +53,7 @@ abstract class NewsService
 
     public function syncArticles(array $filters = []): array
     {
+        Log::info('Syncing articles', ['filters' => $filters]);
         try {
             $articles = $this->getArticles($filters);
 
