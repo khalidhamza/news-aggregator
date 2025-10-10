@@ -11,19 +11,19 @@ class TestController extends AppController
     public function test(Request $request)
     {
         try {
-//            $service = NewsServiceFactory::make(NewsSource::NEWSAPI);
-//
-//            $articles = $service->getArticles([
-//                'keyword' => 'technology',
-//                'from_date' => now()->subDays(7),
-//            ]);
-//
-//            dd($articles, $articles->toArray(), $articles->first()->toArray());
+            $service = NewsServiceFactory::make(NewsSource::NEWSAPI);
 
-            $services = NewsServiceFactory::makeAll();
+            $articles = $service->syncArticles([
+                'keyword' => 'technology',
+                'from_date' => now()->subDays(7),
+            ]);
+
+            dd($articles);
+
+            /*$services = NewsServiceFactory::makeAll();
             $services->each(function($service){
                 dd($service->getArticles());
-            });
+            });*/
         }catch (\Exception $e){
             dd($e->getMessage());
         }

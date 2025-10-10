@@ -19,7 +19,8 @@ class NewsArticleAdapter
             ->setPublishedAt($data['publishedAt'])
             ->setSource(NewsSource::NEWSAPI)
             ->setExternalSource($data['source']['name'] ?? null)
-            ->setExternalId($data['id'] ?? null)
+            // ->setExternalId()
+            // ->setCategory()
             ->build();
     }
 }
