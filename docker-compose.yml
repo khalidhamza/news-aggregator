@@ -84,6 +84,28 @@ services:
       - news_aggregator_network
     restart: unless-stopped
 
+  # Scheduler Service
+  scheduler:
+    build:
+      context: ./build/php
+      dockerfile: Dockerfile
+    container_name: news_aggregator_scheduler
+    command: sh -c "while true; do php artisan schedule:run --verbose --no-interaction & sleep 60; done"
+    volumes:
+      - ./src:/var/www/html
+    environment:
+      - DB_CONNECTION=mysql
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_DATABASE=${DB_NAME}
+      - DB_USERNAME=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+    depends_on:
+      - mysql
+    networks:
+      - news_aggregator_network
+    restart: unless-stopped
+
 volumes:
   mysql_data:
     driver: local

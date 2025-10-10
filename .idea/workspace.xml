@@ -8,8 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Http/Controllers/TestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Http/Controllers/TestController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Repositories/ArticleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Repositories/ArticleRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Services/NewsService/NewsService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Services/NewsService/NewsService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Jobs/SyncArticlesJob.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Jobs/SyncArticlesJob.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/console.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/console.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +228,7 @@
       <workItem from="1760004729130" duration="1719000" />
       <workItem from="1760006458982" duration="1965000" />
       <workItem from="1760008460037" duration="28963000" />
-      <workItem from="1760107590604" duration="7290000" />
+      <workItem from="1760107590604" duration="10667000" />
     </task>
     <servers />
   </component>

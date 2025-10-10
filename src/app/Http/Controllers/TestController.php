@@ -6,6 +6,7 @@ use App\Enums\NewsSource;
 use App\Jobs\SyncArticlesJob;
 use App\Services\NewsService\NewsServiceFactory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 
 class TestController extends AppController
 {
@@ -26,7 +27,9 @@ class TestController extends AppController
                 dd($service->getArticles());
             });*/
 
-            SyncArticlesJob::dispatch();
+            // SyncArticlesJob::dispatch();
+
+            // Artisan::call('articles:sync');
 
         }catch (\Exception $e){
             dd($e->getMessage());

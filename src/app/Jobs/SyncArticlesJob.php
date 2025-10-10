@@ -38,7 +38,7 @@ class SyncArticlesJob implements ShouldQueue
 
     public function handle(): void
     {
-        Log::info("========================= START =========================");
+        Log::info("========================= SyncArticlesJob:START =========================");
         Log::info('Starting article sync job', [
             'source' => $this->source?->name ?? 'all',
             'filters' => $this->filters,
@@ -72,7 +72,7 @@ class SyncArticlesJob implements ShouldQueue
 
             // throw exception to retry
             if (! $result['success']) {
-                Log::info("========================= END (Failed) =========================");
+                Log::info("========================= SyncArticlesJob::END (Failed) =========================");
                 throw new RuntimeException($result['error'] ?? 'Sync failed');
             }
 
@@ -85,11 +85,11 @@ class SyncArticlesJob implements ShouldQueue
             ]);
 
             // re-throw exception
-            Log::info("========================= END (Exception) =========================");
+            Log::info("========================= SyncArticlesJob:END (Exception) =========================");
             throw $e;
         }
 
-        Log::info("========================= END =========================");
+        Log::info("========================= SyncArticlesJob:END =========================");
     }
 
     public function failed(Exception $exception): void
