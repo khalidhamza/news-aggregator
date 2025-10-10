@@ -94,7 +94,7 @@ class NewsArticleBuilder
 
     public function build(): NewsArticle
     {
-        return NewsArticle::create(
+        return new NewsArticle(
             title: $this->title ?? 'Untitled',
             description: $this->description,
             content: $this->content,

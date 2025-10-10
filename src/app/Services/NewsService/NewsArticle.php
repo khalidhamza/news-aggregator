@@ -8,52 +8,23 @@ use Illuminate\Support\Carbon;
 
 class NewsArticle
 {
-    private function __construct(
-        public readonly string $title,
-        public readonly ?string $description,
-        public readonly ?string $content,
-        public readonly ?string $author,
-        public readonly string $url,
-        public readonly ?string $imageUrl,
-        public readonly Carbon $publishedAt,
-        public readonly NewsSource $source,
-        public readonly ?string $category,
-        public readonly ?string $externalId,
-        public readonly ?string $externalSource,
+    public function __construct(
+        public string $title,
+        public ?string $description,
+        public ?string $content,
+        public ?string $author,
+        public string $url,
+        public ?string $imageUrl,
+        public Carbon $publishedAt,
+        public NewsSource $source,
+        public ?string $category,
+        public ?string $externalId,
+        public ?string $externalSource,
     ) {}
 
     public static function builder(): NewsArticleBuilder
     {
         return new NewsArticleBuilder();
-    }
-
-    public static function create(
-        $title,
-        $description,
-        $content,
-        $author,
-        $url,
-        $imageUrl,
-        $publishedAt,
-        $source,
-        $category,
-        $externalId,
-        $externalSource,
-    ): NewsArticle
-    {
-        return new NewsArticle(
-            $title,
-            $description,
-            $content,
-            $author,
-            $url,
-            $imageUrl,
-            $publishedAt,
-            $source,
-            $category,
-            $externalId,
-            $externalSource,
-        );
     }
 
     public function toArray(): array
