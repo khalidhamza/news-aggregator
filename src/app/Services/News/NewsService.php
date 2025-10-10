@@ -31,7 +31,8 @@ abstract class NewsService
             Log::info('Calling the service', [
                 'url' => $this->baseUrl,
                 'params' => $params,
-                'response' => $response
+                // 'response' => $response,
+                'response_status' => $response->status(),
             ]);
             return $response->json();
         } catch (Exception $e) {

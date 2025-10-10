@@ -31,12 +31,26 @@ class TestController extends AppController
 
             // Artisan::call('articles:sync');
 
-            $service = NewsServiceFactory::make(NewsSource::GUARDIAN);
+            /*$service = NewsServiceFactory::make(NewsSource::GUARDIAN);
             $articles = $service->syncArticles([
                 'from_date' => now(),
                 'per_page' => 1,
             ]);
-            dd($articles);
+            dd($articles);*/
+
+            /*$service = NewsServiceFactory::make(NewsSource::NYTIMES);
+            $articles = $service->getArticles([
+                'from_date' => now(),
+                'per_page' => 1,
+            ]);
+            dd($articles);*/
+
+            /*$service = NewsServiceFactory::make(NewsSource::NYTIMES);
+            $articles = $service->syncArticles([
+                'from_date' => now(),
+                'per_page' => 1,
+            ]);
+            dd($articles);*/
 
         }catch (\Exception $e){
             dd($e->getMessage());

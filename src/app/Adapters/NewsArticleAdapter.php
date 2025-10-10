@@ -35,9 +35,24 @@ class NewsArticleAdapter
             ->setImageUrl($data['fields']['thumbnail'] ?? null)
             ->setPublishedAt($data['webPublicationDate'])
             ->setSource(NewsSource::GUARDIAN)
-            ->setExternalSource($data['sectionName'] ?? null)
             ->setExternalId($data['id'] ?? null)
             ->setCategory($data['sectionName'] ?? null)
+            ->build();
+    }
+
+    public static function fromNYTimes(array $data): NewsArticle
+    {
+        return NewsArticle::builder()
+            ->setTitle($data['headline']['main'] ?? 'Untitled')
+            ->setDescription($data['abstract'] ?? null)
+            ->setContent($data['abstract'] ?? null)
+            ->setAuthor($data['byline']['original'] ?? null)
+            ->setUrl($data['web_url'])
+            ->setImageUrl($data['multimedia']['default']['url'] ?? null)
+            ->setPublishedAt($data['pub_date'] ?? null)
+            ->setSource(NewsSource::NYTIMES)
+            ->setExternalId($data['_id'] ?? null)
+            ->setCategory($data['section_name'] ?? null)
             ->build();
     }
 }

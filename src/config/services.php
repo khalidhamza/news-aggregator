@@ -45,4 +45,10 @@ return [
         'endpoint'  => env('GUARDIAN_ENDPOINT'),
     ],
 
+    'nytimes'   => [
+        'api_key'   => env('NYTIMES_API_KEY'),
+        'endpoint'  => env('NYTIMES_ENDPOINT'),
+    ],
+
+
 ];

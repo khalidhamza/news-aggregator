@@ -10,7 +10,7 @@ class ArticleRepository
 {
     public function bulkUpsert(Collection $articles): int
     {
-        Log::info('Bulk upsert articles', ['articles' => $articles]);
+        Log::info('Bulk upsert articles', ['articles_count' => $articles->count()]);
 
         if ($articles->isEmpty()) {
             return 0;
@@ -32,7 +32,7 @@ class ArticleRepository
             'updated_at' => now(),
         ])->toArray();
 
-        Log::info('Upserting articles', [$data]);
+        // Log::info('Upserting articles', [$data]);
 
         return Article::upsert(
             $data,
