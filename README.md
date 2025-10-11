@@ -1,4 +1,4 @@
-# Innoscripta case study [News Aggregator]
+# News Aggregator Application
 
 A backend application powered by PHP (Laravel), MySQL, and Docker. This guide helps you get started quickly using Docker.
 
@@ -15,10 +15,10 @@ Before you begin, ensure you have the following installed:
 
 ### 1. Clone the Repository
    ```bash
-    git clone https://github.com/khalidhamza/innoscripta-news-aggregator-cs.git
+    git clone https://github.com/khalidhamza/news-aggregator.git
    ```
    ```bash   
-    cd innoscripta-news-aggregator-cs
+    cd news-aggregator
    ```
 
 ### 2. Build and start the containers
@@ -30,12 +30,12 @@ Before you begin, ensure you have the following installed:
 
 
 ### 3. Prepare the Laravel application
-   Enter the PHP container to run Laravel and Composer commands:
+   #### 3.1. Enter the PHP container to run Laravel and Composer commands:
    ```sh
    docker exec -it news_aggregator_php sh 
    ```
-   
-   Once inside the container, run:
+
+   #### 3.2. Once inside the container, run:
    ```sh
    composer install
    ```
@@ -48,9 +48,16 @@ Before you begin, ensure you have the following installed:
    ```sh
    php artisan migrate
    ```
-   Exit the container when finished:
+   #### 3.3. Set the news source API key in the `.env` file:
+   ```env
+   NEWSAPI_API_KEY=your_api_key_here
+   GUARDIAN_API_KEY=your_api_key_here
+   NYTIMES_API_KEY=your_api_key_here
+   ```
+
+   #### 3.4. Optimize the application configuration:
    ```sh
-   exit
+   php artisan optimize
    ```
 
 ### 4. Access the application
