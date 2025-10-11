@@ -2,7 +2,9 @@
 
 namespace App\Repositories;
 
+use App\Enums\NewsSource;
 use App\Models\Article;
+use Illuminate\Pagination\CursorPaginator;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Log;
 
@@ -51,4 +53,51 @@ class ArticleRepository
             ]
         );
     }
+
+    public function getArticles(array $filters = []): CursorPaginator
+    {
+        $perPage = $filters['per_page'] ?? 20;
+        return Article::query()
+            ->when(! empty($filters['source']), function ($q) use ($filters) {
+                $source = NewsSource::getIdFromName($filters['source']);
+                $q->where('source', $source);
+            })
+            ->when(! empty($filters['category']), function ($q) use ($filters) {
+                $q->where('category', $filters['category']);
+            })
+            ->when(! empty($filters['author']), function ($q) use ($filters) {
+                $q->where('author', $filters['author']);
+            })
+            ->when(! empty($filters['from_date']), function ($q) use ($filters) {
+                $q->whereDate('published_at', '>=', $filters['from_date']);
+            })
+            ->when(! empty($filters['to_date']), function ($q) use ($filters) {
+                $q->whereDate('published_at', '<=', $filters['to_date']);
+            })
+            ->when(! empty($filters['keyword']), function ($q) use ($filters) {
+                $q->whereFullText(['title', 'description', 'content'], $filters['keyword']);
+            })
+            ->cursorPaginate($perPage);
+
+    }
+
+    public function getCategories()
+    {
+        return Article::select('category')
+            ->whereNotNull('category')
+            ->distinct()
+            ->orderBy('category')
+            ->pluck('category');
+    }
+
+    public function getAuthors()
+    {
+        return Article::select('author')
+            ->whereNotNull('author')
+            ->distinct()
+            ->orderBy('author')
+            ->pluck('author');
+    }
+
+
 }

@@ -4,6 +4,7 @@ namespace App\Enums;
 use App\Services\News\Guardian\GuardianService;
 use App\Services\News\NewsApi\NewsApiService;
 use App\Services\News\NYTimes\NYTimesService;
+use Illuminate\Support\Collection;
 use RuntimeException;
 
 enum NewsSource: int
@@ -32,5 +33,19 @@ enum NewsSource: int
         };
     }
 
+    public static function casesNames(): Collection
+    {
+        return collect(NewsSource::cases())->map(fn($source) => $source->name);
+    }
+
+    public static function getIdFromName(string $name): int
+    {
+        return match ($name) {
+            'NEWSAPI'   => self::NEWSAPI->value,
+            'GUARDIAN'  => self::GUARDIAN->value,
+            'NYTIMES'   => self::NYTIMES->value,
+            default     => 0,
+        };
+    }
 
 }

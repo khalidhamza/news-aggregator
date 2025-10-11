@@ -8,5 +8,11 @@
   <component name="LaravelIdeaMainSettings">
     <option name="frameworkFound" value="true" />
     <option name="laravelBasePath" value="src" />
+    <option name="routing">
+      <LaravelRouting>
+        <option name="customServerAddress" value="http://localhost:8080/" />
+        <option name="serverAddress" value="Custom" />
+      </LaravelRouting>
+    </option>
   </component>
 </project>

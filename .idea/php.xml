@@ -144,6 +144,7 @@
       <path value="$PROJECT_DIR$/src/vendor/dragonmantank/cron-expression" />
       <path value="$PROJECT_DIR$/src/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/src/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/src/vendor/laravel/sanctum" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
