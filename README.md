@@ -1,6 +1,11 @@
 # News Aggregator Application
 
-A backend application powered by PHP (Laravel), MySQL, and Docker. This guide helps you get started quickly using Docker.
+A robust backend application powered by **PHP (Laravel)**, **MySQL**, and **Docker**, designed to aggregate and unify news articles from multiple trusted sources into a single, centralized API.
+
+This application seamlessly integrates with **NewsAPI**, **The Guardian**, and **The New York Times**, fetching and normalizing articles in real time. It provides a consistent data structure and easy access through a RESTful API, making it ideal for analytics, content aggregation, or news-based applications.
+
+This guide will help you quickly set up, run, and explore the News Aggregator application using Docker.
+
 
 ---
 ## Prerequisites
@@ -35,7 +40,7 @@ Before you begin, ensure you have the following installed:
    docker exec -it news_aggregator_php sh 
    ```
 
-   #### 3.2. Once inside the container, run:
+   #### 3.2. Once inside the container, run the following commands
    ```sh
    composer install
    ```
@@ -48,16 +53,37 @@ Before you begin, ensure you have the following installed:
    ```sh
    php artisan migrate
    ```
-   #### 3.3. Set the news source API key in the `.env` file:
+   #### 3.3. Set the news source API key in the `.env` file
    ```env
    NEWSAPI_API_KEY=your_api_key_here
    GUARDIAN_API_KEY=your_api_key_here
    NYTIMES_API_KEY=your_api_key_here
    ```
 
-   #### 3.4. Optimize the application configuration:
+   #### 3.4. Optimize the application configuration
    ```sh
    php artisan optimize
+   ```
+
+   #### 3.5. Exit the container
+   ```sh
+    exit
+   ```
+   #### 3.6. Restart the services to apply any changes
+   ```sh
+    docker compose --env-file ./build/.env restart
+   ```
+
+   #### 3.7. (Optional) Fetch articles immediately
+   > By default, the news aggregation scheduler runs every **one hour**.
+   If you want to populate articles **immediately** without waiting, you can run:
+ 
+   ```sh
+    docker exec -it news_aggregator_php sh
+   ```
+
+   ```sh
+    php artisan articles:sync
    ```
 
 ### 4. Access the application
