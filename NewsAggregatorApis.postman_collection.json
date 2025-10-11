@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "07c3b8f0-48ee-4b56-bc62-6eb705dd1572",
+		"name": "NewsAggregatorApis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3572491"
+	},
+	"item": [
+		{
+			"name": "Get Articles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/articles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"articles"
+					],
+					"query": [
+						{
+							"key": "source",
+							"value": "NEWSAPI",
+							"description": "Source, From Sources List",
+							"disabled": true
+						},
+						{
+							"key": "category",
+							"value": "Food",
+							"description": "Category, From Categories List",
+							"disabled": true
+						},
+						{
+							"key": "author",
+							"value": "Allie Garfinkle",
+							"disabled": true
+						},
+						{
+							"key": "from_date",
+							"value": "2025-10-10",
+							"disabled": true
+						},
+						{
+							"key": "to_date",
+							"value": "2025-10-10",
+							"disabled": true
+						},
+						{
+							"key": "keyword",
+							"value": "That’ll do from me tonight.",
+							"disabled": true
+						},
+						{
+							"key": "per_page",
+							"value": "100",
+							"disabled": true
+						},
+						{
+							"key": "cursor",
+							"value": "eyJhcnRpY2xlcy5pZCI6NDQwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Filters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/articles?source=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"articles"
+					],
+					"query": [
+						{
+							"key": "source",
+							"value": "4",
+							"description": "Source ID, From Sources List"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

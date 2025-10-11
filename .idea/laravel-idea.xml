@@ -6,6 +6,16 @@
     </option>
   </component>
   <component name="LaravelIdeaMainSettings">
+    <option name="codeGeneration">
+      <LaravelCodeGeneration>
+        <option name="generationStringSettings">
+          <map>
+            <entry key="createEloquentScope:namespace" value="Models\Scopes" />
+            <entry key="createModel:namespace" value="Models" />
+          </map>
+        </option>
+      </LaravelCodeGeneration>
+    </option>
     <option name="frameworkFound" value="true" />
     <option name="laravelBasePath" value="src" />
     <option name="routing">
@@ -14,5 +24,6 @@
         <option name="serverAddress" value="Custom" />
       </LaravelRouting>
     </option>
+    <option name="userClassName" value="\App\Models\User" />
   </component>
 </project>
