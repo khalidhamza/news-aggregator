@@ -97,7 +97,7 @@ Before you begin, ensure you have the following installed:
 You can explore and test the API using the provided Postman documentation and collection.
 
 - **Online Documentation:** [News Aggregator API Docs](https://documenter.getpostman.com/view/3572491/2sB3QKtATJ)
-- **Local Collection File:** `NewsAggregatorApis.postman_collection.json` (available in the project root folder)
+- **Local Collection File:** `ApiCollection.json` (available in the project root folder)
 
 To use locally:
 1. Open Postman.
@@ -111,9 +111,9 @@ To use locally:
 ```
 ├── build/                     # Docker configuration and environment files
 ├── src/                       # Laravel application source code
-├── docker-compose.yml          # Main Docker Compose configuration
-├── NewsAggregatorApis.postman_collection.json
-└── README.md                   # This documentation file
+├── docker-compose.yml         # Main Docker Compose configuration
+├── ApiCollection.json         # Postman API Collection
+└── README.md                  # This documentation file
 ```
 
 ---
