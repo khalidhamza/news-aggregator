@@ -2,7 +2,7 @@
 
 A robust backend application powered by **PHP (Laravel)**, **MySQL**, and **Docker**, designed to aggregate and unify news articles from multiple trusted sources into a single, centralized API.
 
-This application seamlessly integrates with **NewsAPI**, **The Guardian**, and **The New York Times**, fetching and normalizing articles in real time. It provides a consistent data structure and easy access through a RESTful API, making it ideal for analytics, content aggregation, or news-based applications.
+This application seamlessly integrates with **NewsAPI**, **The Guardian**, and **The New York Times**, fetching and normalizing articles. It provides a consistent data structure and easy access through a RESTful API, making it ideal for analytics, content aggregation, or news-based applications.
 
 This guide will help you quickly set up, run, and explore the News Aggregator application using Docker.
 
